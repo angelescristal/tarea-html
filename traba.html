@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demostraciones Matemáticas</title>
+  <style>
+    body {
+      font-family: AlphaMack 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+      margin: 2em;
+      line-height: 1.6;
+      background-color: #6f1568;
+      color: #200e0e;
+    }
+    h1, h2 {
+      color: #0b1824;
+    }
+    .highlight {
+      color: green;
+      font-weight: bold;
+    }
+    pre {
+      background-color: #f973dc;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    code {
+      background-color: #f973dc;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .sumas td {
+      padding: 4px 10px;
+    }
+    button {
+      padding: 10px;
+      background-color: #b762b7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #b762b7;
+    }
+    .container {
+      margin-bottom: 40px;
+    }
+    .exercise {
+      background-color: #eacedc;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    .image-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Demostraciones Matemáticas</h1>
+
+<!-- Botones de navegación -->
+<div class="container">
+  <button onclick="window.location.href='#ejercicio1'">Ejercicio 1: Principio del Palomar</button>
+  <button onclick="window.location.href='#ejercicio2'">Ejercicio 2: Secuencia de Números con Sumas de Cuadrados Perfectos</button>
+</div>
+
+<hr>
+
+<!-- Ejercicio 1: Principio del Palomar -->
+<div class="exercise" id="ejercicio1">
+  <h2>Ejercicio 1: Demostración con el Principio del Palomar</h2>
+
+  <h3>Enunciado</h3>
+  <p>En una reunión hay 100 personas, donde el más joven tiene 20 años y el más viejo tiene 30 años. Demuestra que <strong>al menos 10 personas tienen la misma edad</strong>.</p>
+
+  <h3>Solución</h3>
+  <p>Definimos las posibles edades como el conjunto:</p>
+
+  <pre>{ 20, 21, 22, ..., 30 }</pre>
+
+  <p>Esto nos da un total de:</p>
+
+  <pre>30 - 20 + 1 = 11 edades distintas.</pre>
+
+  <p>Queremos demostrar que al menos una edad se repite <strong>10 o más veces</strong>.</p>
+
+  <p>Para ello, aplicamos el <strong>Principio del Palomar</strong> (o Principio de Dirichlet), que establece que:</p>
+
+  <blockquote>
+    Si \( n \) objetos se distribuyen entre \( m \) cajas, entonces al menos una caja debe contener al menos \( \lceil n/m \rceil \) objetos.
+  </blockquote>
+
+  <p>En este caso, los objetos son las 100 personas y las cajas son las 11 edades posibles.</p>
+
+  <p>Entonces, si tratamos de distribuir las 100 personas entre 11 edades, el número máximo de personas por edad, si todas se distribuyeran uniformemente, sería:</p>
+
+  <pre>&#x03C0; (100 / 11) = 10.</pre>
+
+  <p>Esto implica que <strong>al menos una edad debe ser compartida por al menos 10 personas</strong>.</p>
+
+  <h3>Conclusión</h3>
+  <p>Por lo tanto, hemos demostrado que <strong>al menos 10 personas deben compartir la misma edad</strong> en cualquier distribución posible de las 100 personas en el intervalo de edades de 20 a 30 años, gracias al Principio del Palomar.</p>
+
+  <!-- Imagen después del ejercicio -->
+  <div class="image-container">
+    <img src="index.html\Screenshot 2025-05-06 143605.jpg" alt="Mi foto" width="3000" height="2000">
+    <img src="index.html\Screenshot 2025-05-06 143651.jpg" alt="Mi fot" width="3000" height="2000">
+  </div>
+</div>
+
+<hr>
+
+<!-- Ejercicio 2: Secuencia con sumas de cuadrados perfectos -->
+<div class="exercise" id="ejercicio2">
+  <h2>Ejercicio 2: Secuencia de Números con Sumas de Cuadrados Perfectos</h2>
+
+  <h3>Enunciado</h3>
+  <p>Demostrar que es posible ordenar los números del 1 al 16 en una secuencia tal que la suma de cada par de números consecutivos sea siempre un cuadrado perfecto.</p>
+
+  <h3>Solución</h3>
+  <p>Queremos encontrar una permutación de los números del 1 al 16:</p>
+
+  <pre>[a₁, a₂, ..., a₁₆]</pre>
+
+  <p>Tal que para todo \( i = 1, ..., 15 \), se cumpla que \( a_i + a_{i+1} \) sea un cuadrado perfecto.</p>
+
+  <p>Una secuencia válida (obtenida mediante programación) es:</p>
+
+  <pre>[16, 9, 7, 2, 14, 11, 5, 4, 12, 13, 3, 6, 10, 15, 1, 8]</pre>
+
+  <h3>Verificación de las sumas:</h3>
+
+  <table class="sumas">
+    <tbody>
+      <tr><td>16 + 9</td><td>= 25</td><td class="highlight">✓</td></tr>
+      <tr><td>9 + 7</td><td>= 16</td><td class="highlight">✓</td></tr>
+      <tr><td>7 + 2</td><td>= 9</td><td class="highlight">✓</td></tr>
+      <tr><td>2 + 14</td><td>= 16</td><td class="highlight">✓</td></tr>
+      <tr><td>14 + 11</td><td>= 25</td><td class="highlight">✓</td></tr>
+      <tr><td>11 + 5</td><td>= 16</td><td class="highlight">✓</td></tr>
+      <tr><td>5 + 4</td><td>= 9</td><td class="highlight">✓</td></tr>
+      <tr><td>4 + 12</td><td>= 16</td><td class="highlight">✓</td></tr>
+      <tr><td>12 + 13</td><td>= 25</td><td class="highlight">✓</td></tr>
+      <tr><td>13 + 3</td><td>= 16</td><td class="highlight">✓</td></tr>
+      <tr><td>3 + 6</td><td>= 9</td><td class="highlight">✓</td></tr>
+      <tr><td>6 + 10</td><td>= 16</td><td class="highlight">✓</td></tr>
+      <tr><td>10 + 15</td><td>= 25</td><td class="highlight">✓</td></tr>
+      <tr><td>15 + 1</td><td>= 16</td><td class="highlight">✓</td></tr>
+      <tr><td>1 + 8</td><td>= 9</td><td class="highlight">✓</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Conclusión</h3>
+  <p>Se ha demostrado que <strong>sí es posible</strong> ordenar los números del 1 al 16 de manera que la suma de cada par consecutivo sea un cuadrado perfecto. La secuencia presentada cumple esta condición.</p>
+
+  <!-- Imagen después del ejercicio -->
+  <div class="image-container">
+    
+    <img src="index.html\Screenshot 2025-05-06 143811.jpg" alt="Mi fot" width="3000" height="2000">
+  </div>
+</div>
+
+</body>
+</html>
